@@ -20,6 +20,7 @@ import {
   tesla,
   shopify,
   codezeal,
+  Ecom,
   jobit,
   tripguide,
   aiMood,
@@ -181,9 +182,9 @@ const projects = [
     source_code_link: "https://github.com/mayankl001/mood-ai-recommender.git",
   },
   {
-    name: "Job IT",
+    name: "E-commerce website",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Built a full-stack E-Commerce Website using HTML, CSS, JavaScript, and Django. Implemented product listing and Add to Cart with API integration. Managed data using Django admin panel.",
     tags: [
       {
         name: "react",
@@ -198,8 +199,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: Ecom,
+    source_code_link: "https://github.com/mayankl001/E-CommerceWebsite.git",
   },
   {
     name: "Trip Guide",
