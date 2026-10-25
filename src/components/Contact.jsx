@@ -31,16 +31,18 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    const currentDate = new Date().toLocaleString();
+
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
-          to_name: "Mayank",
-          from_email: form.email,
-          to_email: "mayankumar214@gmail.com",
+          name: form.name,
+          email: form.email,
           message: form.message,
+          title: "Portfolio Contact Form",
+          time: currentDate,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
@@ -98,7 +100,7 @@ const Contact = () => {
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="What's your email address?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -116,7 +118,8 @@ const Contact = () => {
 
           <button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            disabled={loading}
+            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary disabled:opacity-50 cursor-pointer'
           >
             {loading ? "Sending..." : "Send"}
           </button>
