@@ -16,11 +16,10 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
+    const { name, value } = e.target;
     setForm({
       ...form,
       [name]: value,
@@ -30,6 +29,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    setStatus({ type: "", message: "" });
 
     const currentDate = new Date().toLocaleString();
 
@@ -49,7 +49,10 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          setStatus({
+            type: "success",
+            message: "Thank you! I will get back to you as soon as possible.",
+          });
 
           setForm({
             name: "",
@@ -60,75 +63,99 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
+          setStatus({
+            type: "error",
+            message: "Ahh, something went wrong. Please try again.",
+          });
         }
       );
   };
 
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
+    <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
+      {/* Left Column: Form Section */}
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className="flex-[0.75] bg-[#100d25]/90 border border-[#915EFF]/30 p-8 rounded-2xl backdrop-blur-xl shadow-2xl"
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <p className={`${styles.sectionSubText} text-[#915EFF]`}>Get in touch</p>
+        <h3 className={`${styles.sectionHeadText} text-white`}>
+          Contact<span className="text-[#915EFF]">.</span>
+        </h3>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='mt-12 flex flex-col gap-8'
+          className="mt-8 flex flex-col gap-6"
         >
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-2">Your Name</span>
             <input
-              type='text'
-              name='name'
+              type="text"
+              name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="What's your good name?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              required
+              className="bg-[#151030] py-4 px-6 placeholder:text-gray-500 text-white rounded-xl outline-none border border-white/10 focus:border-[#915EFF] font-medium transition-colors"
             />
           </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-2">Your Email</span>
             <input
-              type='email'
-              name='email'
+              type="email"
+              name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email address?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              required
+              className="bg-[#151030] py-4 px-6 placeholder:text-gray-500 text-white rounded-xl outline-none border border-white/10 focus:border-[#915EFF] font-medium transition-colors"
             />
           </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
+
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-2">Your Message</span>
             <textarea
-              rows={7}
-              name='message'
+              rows={6}
+              name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder='What you want to say?'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              placeholder="What do you want to say?"
+              required
+              className="bg-[#151030] py-4 px-6 placeholder:text-gray-500 text-white rounded-xl outline-none border border-white/10 focus:border-[#915EFF] font-medium transition-colors resize-none"
             />
           </label>
 
           <button
-            type='submit'
+            type="submit"
             disabled={loading}
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary disabled:opacity-50 cursor-pointer'
+            className="bg-[#915EFF] hover:bg-[#7b46e3] py-3.5 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-lg shadow-[#915EFF]/30 transition-all duration-300 disabled:opacity-50 cursor-pointer flex items-center gap-2"
           >
-            {loading ? "Sending..." : "Send"}
+            {loading ? "Sending..." : "Send Message "}
           </button>
+
+          {/* Status Message Notification */}
+          {status.message && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={`p-4 rounded-xl border text-sm font-medium ${
+                status.type === "success"
+                  ? "bg-green-500/10 border-green-500/30 text-green-400"
+                  : "bg-red-500/10 border-red-500/30 text-red-400"
+              }`}
+            >
+              {status.message}
+            </motion.div>
+          )}
         </form>
       </motion.div>
 
+      {/* Right Column: 3D Earth Canvas */}
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
         <EarthCanvas />
       </motion.div>

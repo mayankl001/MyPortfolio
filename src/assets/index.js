@@ -26,6 +26,8 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import codezeal from "./company/codezeal.png";
+import digisaloon from "./company/digisaloon.png";
+import digisaloons from "./digisaloons.png"
 import Ecom from "./Ecom.png";
 
 import jobit from "./jobit.png";
@@ -59,6 +61,8 @@ export {
   starbucks,
   tesla,
   codezeal,
+  digisaloon,
+  digisaloons,
   Ecom,
   jobit,
   tripguide,

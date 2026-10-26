@@ -15,19 +15,16 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   codezeal,
+  digisaloon,
+  digisaloons,
   Ecom,
-  jobit,
   tripguide,
   aiMood,
   threejs,
 } from "../assets";
 
-export const navLinks = [
+const navLinks = [
   {
     id: "about",
     title: "About",
@@ -35,6 +32,14 @@ export const navLinks = [
   {
     id: "work",
     title: "Work",
+  },
+  {
+    id: "tech",
+    title: "Skills",
+  },
+  {
+    id: "projects",
+    title: "Projects",
   },
   {
     id: "contact",
@@ -56,7 +61,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Data Analatics",
+    title: "Data Analytics",
     icon: creator,
   },
 ];
@@ -118,24 +123,39 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Full stack Developer",
-    company_name: "Codezeal private limited",
+    title: "Chief Technical Head",
+    company_name: "Digisaloon",
+    icon: digisaloon,
+    iconBg: "#1d1836",
+    date: "June 2026 - Present",
+    points: [
+      "Leading technical strategy, architecture design, and core software development across all digital products.",
+      "Managing cross-functional engineering teams to build scalable, high-performance web applications and services.",
+      "Optimizing system performance, CI/CD pipelines, and integrating modern tech stacks for optimal developer productivity.",
+      "Overseeing client requirements and transforming business needs into reliable technical solutions."
+    ],
+    skills: ["Leadership", "Full-Stack Architecture", "React", "Node.js", "System Design"],
+  },
+  {
+    title: "Full Stack Developer Intern",
+    company_name: "Codezeal Private Limited",
     icon: codezeal,
     iconBg: "#E6DEDD",
-    date: "July 2025 - sept 2025",
+    date: "July 2025 - Sept 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing and maintaining web applications using React.js and modern JavaScript frameworks.",
+      "Collaborating with cross-functional teams including designers and product managers to deliver scalable products.",
+      "Implementing responsive layouts, robust frontend state management, and ensuring seamless cross-browser compatibility.",
+      "Participating in regular code reviews and optimizing web performance metrics."
     ],
+    skills: ["React.js", "JavaScript", "Tailwind CSS", "REST API", "Git"],
   },
 ];
 
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      "Mayank demonstrated exceptional problem-solving skills and delivered the project well ahead of our timeline.",
     name: "Sara Lee",
     designation: "CFO",
     company: "Acme Co",
@@ -143,7 +163,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+      "A proactive developer who really cares about user experience and code quality. Highly recommended!",
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
@@ -151,7 +171,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      "His expertise in full-stack architecture helped us streamline our web platform efficiently.",
     name: "Lisa Wang",
     designation: "CTO",
     company: "456 Enterprises",
@@ -161,68 +181,93 @@ const testimonials = [
 
 const projects = [
   {
-    name: "AI mood recommender",
+    name: "Digisaloon Platform",
+    description:
+      "Official digital marketing and IT solution website for Digisaloon. Built with modern full-stack architecture, dynamic service showcases, client onboarding flows, and optimized performance.",
+    tags: [
+      {
+        name: "react",
+        color: "text-cyan-400",
+      },
+      {
+        name: "tailwind",
+        color: "text-pink-400",
+      },
+      {
+        name: "nodejs",
+        color: "text-green-400",
+      },
+    ],
+    image: digisaloons,
+    source_code_link: "https://github.com/mayankl001",
+    live_demo_link: "https://digisaloon.in",
+  },
+  {
+    name: "Real Estate Website",
+    description:
+      "Full-featured Real Estate web platform enabling users to search, filter, buy, and rent properties. Includes interactive property viewings, agent contacts, and map integrations.",
+    tags: [
+      {
+        name: "react",
+        color: "text-cyan-400",
+      },
+      {
+        name: "mongodb",
+        color: "text-green-400",
+      },
+      {
+        name: "express",
+        color: "text-yellow-400",
+      },
+    ],
+    image: "/assets/realestate-project.png",
+    source_code_link: "https://github.com/mayankl001",
+    live_demo_link: "#",
+  },
+  {
+    name: "AI Mood Recommender",
     description:
       "AI-based system that detects user mood using NLP/ML techniques and provides personalized recommendations like music, movies, or activities to enhance user experience.",
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
+        color: "text-cyan-400",
       },
       {
         name: "mongodb",
-        color: "green-text-gradient",
+        color: "text-green-400",
       },
       {
         name: "tailwind",
-        color: "pink-text-gradient",
+        color: "text-pink-400",
       },
     ],
     image: aiMood,
     source_code_link: "https://github.com/mayankl001/mood-ai-recommender.git",
+    live_demo_link: "#",
   },
   {
-    name: "E-commerce website",
+    name: "E-Commerce Website",
     description:
-      "Built a full-stack E-Commerce Website using HTML, CSS, JavaScript, and Django. Implemented product listing and Add to Cart with API integration. Managed data using Django admin panel.",
+      "Full-stack E-Commerce website featuring product filtering, cart management, and Django admin dashboard integration.",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
+        name: "django",
+        color: "text-emerald-400",
+      },
+      {
+        name: "javascript",
+        color: "text-yellow-400",
       },
       {
         name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
+        color: "text-purple-400",
       },
     ],
     image: Ecom,
     source_code_link: "https://github.com/mayankl001/E-CommerceWebsite.git",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    live_demo_link: "#",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { navLinks, services, technologies, experiences, testimonials, projects };
