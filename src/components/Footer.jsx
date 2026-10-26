@@ -11,13 +11,13 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: "💼",
-    url: "https://linkedin.com/in/mayank", // Apni LinkedIn URL lagayein
+    url: "https://www.linkedin.com/in/mayank-kumar-69a797244", // Apni LinkedIn URL lagayein
     color: "hover:border-blue-500 hover:text-blue-400",
   },
   {
     name: "Email",
     icon: "✉️",
-    url: "mailto:mayank@example.com", // Apni Email ID lagayein
+    url: "mailto:mayankumar214@gmail.com", // Apni Email ID lagayein
     color: "hover:border-purple-500 hover:text-purple-400",
   },
 ];
