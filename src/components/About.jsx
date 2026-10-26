@@ -32,7 +32,7 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>About Me.</h2>
       </motion.div>
 
-      <div className="mt-8 flex flex-col-reverse lg:flex-row gap-12 items-stretch justify-between">
+      <div className="mt-8 flex flex-col-reverse lg:flex-row gap-12 items-stretch justify-between overflow-hidden">
         {/* Interactive Bio & Code Terminal Card */}
         <motion.div
           variants={fadeIn("right", "tween", 0.2, 1)}
@@ -97,7 +97,7 @@ const About = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="font-mono text-sm bg-[#0b071e]/90 p-4 rounded-2xl border border-white/10 text-gray-300 space-y-2"
+                  className="font-mono text-sm bg-[#0b071e]/90 p-4 rounded-2xl border border-white/10 text-gray-300 space-y-2 overflow-x-auto"
                 >
                   <p className="text-[#915EFF]">// Development Philosophy</p>
                   <p><span className="text-pink-400">const</span> developer = &#123;</p>
@@ -128,13 +128,13 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Personal Portrait Container with Clean Ambient Glow */}
+        {/* Personal Portrait Container with Mobile-Safe Glow & Floating Badges */}
         <motion.div
           variants={fadeIn("left", "spring", 0.3, 1)}
-          className="relative group flex justify-center items-center"
+          className="relative group flex justify-center items-center py-4"
         >
           {/* Soft Animated Neon Backdrop Glow */}
-          <div className="absolute w-[85%] h-[85%] bg-gradient-to-tr from-[#915EFF]/40 via-[#38bdf8]/30 to-[#00cea8]/40 rounded-full blur-2xl group-hover:blur-3xl opacity-70 group-hover:opacity-100 transition-all duration-500 animate-pulse" />
+          <div className="absolute w-[80%] h-[80%] bg-gradient-to-tr from-[#915EFF]/40 via-[#38bdf8]/30 to-[#00cea8]/40 rounded-full blur-2xl group-hover:blur-3xl opacity-70 group-hover:opacity-100 transition-all duration-500 animate-pulse" />
 
           {/* Sleek Outer Border Card */}
           <div className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] rounded-3xl p-[2px] bg-gradient-to-b from-[#915EFF]/60 via-white/10 to-[#00cea8]/40 shadow-[0_15px_35px_rgba(11,7,30,0.9)]">
@@ -150,11 +150,11 @@ const About = () => {
             </div>
           </div>
 
-          {/* Clean Floating Badges */}
+          {/* Clean Floating Badges (Mobile Overflow Safe) */}
           <motion.div
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-4 -left-2 sm:-left-6 bg-[#0f0b29]/95 border border-[#915EFF]/40 px-4 py-2 rounded-2xl text-xs font-medium text-white backdrop-blur-xl shadow-2xl flex items-center gap-2 z-20"
+            className="absolute -bottom-2 left-2 sm:-left-6 bg-[#0f0b29]/95 border border-[#915EFF]/40 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl text-xs font-medium text-white backdrop-blur-xl shadow-2xl flex items-center gap-2 z-20"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-[#915EFF] shadow-[0_0_10px_#915EFF]" />
             <span>Full-Stack Developer</span>
@@ -163,7 +163,7 @@ const About = () => {
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-4 -right-2 sm:-right-6 bg-[#0f0b29]/95 border border-[#00cea8]/40 px-4 py-2 rounded-2xl text-xs font-medium text-white backdrop-blur-xl shadow-2xl flex items-center gap-2 z-20"
+            className="absolute -top-2 right-2 sm:-right-6 bg-[#0f0b29]/95 border border-[#00cea8]/40 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl text-xs font-medium text-white backdrop-blur-xl shadow-2xl flex items-center gap-2 z-20"
           >
             <span className="text-amber-400 text-sm">⚡</span>
             <span>Modern UI Architecture</span>

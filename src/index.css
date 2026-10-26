@@ -13,6 +13,14 @@
   color-scheme: dark;
 }
 
+/* Horizontal Scroll / Mobile Overflow Fix */
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -73,7 +81,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* canvas loader styles */
+/* Canvas Loader Styles */
 .canvas-loader {
   font-size: 10px;
   width: 1em;

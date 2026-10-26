@@ -5,7 +5,7 @@ import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Stars
 const App = () => {
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
+      <div className='relative z-0 bg-primary overflow-x-hidden max-w-full'>
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
@@ -19,10 +19,9 @@ const App = () => {
           <Contact />
           <StarsCanvas />
         </div>
-        <Footer />
       </div>
     </BrowserRouter>
   );
-};
+}
 
 export default App;
