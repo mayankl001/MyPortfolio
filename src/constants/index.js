@@ -18,6 +18,7 @@ import {
   codezeal,
   digisaloon,
   digisaloons,
+  digiestate,
   Ecom,
   tripguide,
   aiMood,
@@ -220,9 +221,9 @@ const projects = [
         color: "text-yellow-400",
       },
     ],
-    image: "/assets/realestate-project.png",
+    image: digiestate,
     source_code_link: "https://github.com/mayankl001",
-    live_demo_link: "#",
+    live_demo_link: "https://digiestate-website.vercel.app/",
   },
   {
     name: "AI Mood Recommender",
@@ -244,7 +245,7 @@ const projects = [
     ],
     image: aiMood,
     source_code_link: "https://github.com/mayankl001/mood-ai-recommender.git",
-    live_demo_link: "#",
+    live_demo_link: "https://mood-ai-recommender.vercel.app/",
   },
   {
     name: "E-Commerce Website",
@@ -266,7 +267,7 @@ const projects = [
     ],
     image: Ecom,
     source_code_link: "https://github.com/mayankl001/E-CommerceWebsite.git",
-    live_demo_link: "#",
+    live_demo_link: "https://ecommerce-website.vercel.app/",
   },
 ];
 

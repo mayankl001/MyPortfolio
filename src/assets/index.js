@@ -28,6 +28,7 @@ import tesla from "./company/tesla.png";
 import codezeal from "./company/codezeal.png";
 import digisaloon from "./company/digisaloon.png";
 import digisaloons from "./digisaloons.png"
+import digiestate from "./digiestate.png"
 import Ecom from "./Ecom.png";
 
 import jobit from "./jobit.png";
@@ -63,6 +64,7 @@ export {
   codezeal,
   digisaloon,
   digisaloons,
+  digiestate,
   Ecom,
   jobit,
   tripguide,
